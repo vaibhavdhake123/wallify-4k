@@ -17,12 +17,12 @@ const AboutScreen = () => {
 
 
   const getPackageName = () => {
-    return 'com.wallify.pawsomecreations'; // Replace with your app's package name
+    return 'com.wallify.pawsomecreations'; 
   };
 
 
   const handleAbout = async () => {
-    const url = 'https://pawsomecreation.blogspot.com/';
+    const url = 'https://happypawsstudio.blogspot.com/p/about-us-wallify.html';
 
     try {
       // Open the URL directly without checking if it can be opened
@@ -36,7 +36,7 @@ const AboutScreen = () => {
 
   const handlelegal = async () => {
     const url =
-      'https://happypawsstudio.blogspot.com/p/cook-crafter-privacy-policy.html';
+      'https://happypawsstudio.blogspot.com/p/privacy-policy-for-wallify.html';
     try {
       console.log('Attempting to open URL...');
       await Linking.openURL(url);
@@ -100,7 +100,7 @@ const AboutScreen = () => {
       <View style={styles.imgContainer}>
         <Image
           source={require('../assets/images/logo.png')}
-          style={{height: 150, width: 150, borderRadius: 40}}
+          style={{height: 150, width: 150, borderRadius: 100}}
         />
       </View>
       <View style={styles.cardContainer}>

@@ -28,6 +28,14 @@ const SearchScreen = () => {
   const fetchData = async () => {
     setLoading(true);
     setError(null);
+
+    const cachedData = await AsyncStorage.getItem(text);
+    if (cachedData) {
+      setData(JSON.parse(cachedData));
+      setLoading(false);
+      return;
+    }
+
     try {
       let apiKey = await AsyncStorage.getItem(API_KEY_STORAGE_KEY);
 
@@ -43,6 +51,11 @@ const SearchScreen = () => {
 
       const shuffledData = response.data.photos.sort(() => Math.random() - 0.5);
       setData(shuffledData);
+
+
+      await AsyncStorage.setItem(text, JSON.stringify(shuffledData));
+
+      
     } catch (err) {
       console.error('Error fetching data from Pexels API:', err);
       setError('Unable to fetch images. Please try again later.');
