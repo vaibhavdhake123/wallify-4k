@@ -46,7 +46,7 @@ const HomeScreen = () => {
   
           // Shuffle the data
           const shuffledData = response.data.photos.sort(() => Math.random() - 0.5);
-          console.log("Shuffled Data:", shuffledData);  // Added log for debugging
+          // console.log("Shuffled Data:", shuffledData);  // Added log for debugging
           setData(shuffledData);
         } catch (err) {
           console.error("Error fetching data from Pexels API:", err);
@@ -59,7 +59,7 @@ const HomeScreen = () => {
         const cachedData = await AsyncStorage.getItem(IMAGE_CACHE_KEY);
         if (cachedData) {
           const parsedData = JSON.parse(cachedData);
-          console.log("Loaded Cached Data:", parsedData);  // Added log for debugging
+          //console.log("Loaded Cached Data:", parsedData);  // Added log for debugging
           setData(parsedData);
           setLoading(false);
         } else {
